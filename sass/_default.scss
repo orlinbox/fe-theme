@@ -1,0 +1,39 @@
+/* Default values for main HTML elements */
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  line-height: 1.3;
+  color: $body-color;
+  background-color: $body-background-color;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $link-color;
+  outline-color: $link-color;
+  transition: color 400ms;
+  &:hover,
+  &:active {
+    color: $link-hover-color;
+    transition: color 200ms;
+  }
+}
+
+.span-6-of-12 {
+  @include span(6 of 12);
+}

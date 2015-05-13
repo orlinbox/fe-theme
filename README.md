@@ -1,6 +1,6 @@
-*Working draft.*
+* version: 0.1.0 *
 
-# Purpose of 'prp_theme' project
+# Purpose of 'ffw_theme' project
 
 * Wide discussion, to result in a single FE standard (theme) to be used.
 
@@ -28,7 +28,7 @@
 
 ---
 
-# Topics for discussion related to *prp_theme*
+# Topics for discussion related to *ffw_theme*
 
 * SASS - we decided to use [Compass](http://compass-style.org/), need training
 * Grid system - we decided to use [Susy](http://susy.oddbird.net/), need training
@@ -41,3 +41,20 @@
 * Documentation and compliance with the standard
 * Directory structure
 * ...missed something? Please add here!
+
+---
+
+# Current software requirements
+
+* git
+* node.js
+* npm
+* grunt 0.4.5
+* compass 1.0.3
+* sass 3.4.13
+
+---
+
+# Version history
+
+* 0.1.0 - initial structure and files
