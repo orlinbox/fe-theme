@@ -58,26 +58,37 @@
 # Startup guide
 
 * Clone this repo in the desired directory
+
 ```
 $ git clone git@gitlab.workingpropeople.com:svetlin/prp_theme.git ffw
 ```
+
 * Enter the directory
+
 ```
 $ cd ffw
 ```
+
 * Checkout the desired branch e.g. drupal7
+
 ```
 $ git checkout drupal7
 ```
+
 * IMPORTANT: remove the local repo by removing the .git directory. You do NOT want to commit to this repo.
+
 ```
 $ rm -rf .git
 ```
+
 * Install Grunt related stuff
+
 ```
 $ sudo npm install
 ```
+
 * Start work
+
 ```
 $ grunt watch
 ```
