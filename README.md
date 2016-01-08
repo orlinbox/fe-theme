@@ -110,6 +110,8 @@ $ git diff --word-diff
 
 # Version history #
 
+###### List ######
+
 * 0.1.5 - added "ellipsis" class and extend (for single line)
 * 0.1.4 - added default styles for inputs and buttons
 * 0.1.3 - added "clearfix" class and extend
