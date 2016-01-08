@@ -1,4 +1,4 @@
-* version: 0.1.4
+* version: 0.1.5
 
 # Purpose of 'ffw_theme' project
 
@@ -57,6 +57,7 @@
 
 # Startup guide
 
+* Check software requirements (listed above)
 * Clone this repo in the desired directory
 
 ```
@@ -95,8 +96,21 @@ $ grunt watch
 
 ---
 
+# Tips
+
+* Compare (diff) a single line in git (suitable for compressed CSS)
+
+```
+$ git diff --word-diff
+```
+
+* If you plan to use SVGs in the project, you should consider using [SVGO](https://github.com/svg/svgo), which is also available as a [Grunt task](https://github.com/sindresorhus/grunt-svgmin)
+
+---
+
 # Version history
 
+* 0.1.5 - added "ellipsis" class and extend (for single line)
 * 0.1.4 - added default styles for inputs and buttons
 * 0.1.3 - added "clearfix" class and extend
 * 0.1.2 - added "startup guide"
