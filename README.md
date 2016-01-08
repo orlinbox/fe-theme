@@ -1,50 +1,10 @@
+# FFW FE Theme
+---
 * version: 0.1.5
 
-# Purpose of 'ffw_theme' project #
-
-* Wide discussion, to result in a single FE standard (theme) to be used.
-
-### Benefits ###
-
-* Easier and more pleasant work in FE department.
-* Easy switch between projects. Anyone should be able to work on any project.
-* Better quality of the product and personal improvement.
-
-### What could be done? ###
-
-* Drupal, .NET, and Design (prototype) departments could use single FE 'theme'.
-* Single tool for process automation (CSS, JavaScript, style guides etc.), e.g. Grunt.
-* Standardized directory structure and more standards (upon discussion). GitLab.
-
-### Who should work on this? ###
-
-* Everybody could help in the process, but experience in the field is a must.
-* We should keep the Design department informed and (probably) listen to them.
-
-### When could this be ready to see in action? ###
-
-* Depends on the time dedicated to work on this.
-* Could be 1st of July 2015 (see previous one). Update: working version is now available
-
 ---
 
-# Topics for discussion related to *ffw_theme* #
-
-* SASS - we decided to use [Compass](http://compass-style.org/), need training
-* Grid system - we decided to use [Susy](http://susy.oddbird.net/), need training
-* Automation - we decided to use automation - [Grunt](http://gruntjs.com/), need training
-* Drupal, PHP
-* CSS reset - NO! CSS normalize, default styling for some elements
-* JavaScript and libraries
-* Images, icon fonts, fonts
-* FE performance optimization
-* Documentation and compliance with the standard
-* Directory structure
-* ...missed something? Please add here!
-
----
-
-# Current software requirements #
+# Current software requirements
 ---
 * git
 * node.js
@@ -55,7 +15,7 @@
 
 ---
 
-# Startup guide #
+# Startup guide
 ---
 * Check software requirements (listed above)
 * Clone this repo in the desired directory
@@ -96,8 +56,8 @@ $ grunt watch
 
 ---
 
-# Tips #
-
+# Tips
+---
 * Compare (diff) a single line in git (suitable for compressed CSS)
 
 ```
@@ -108,12 +68,57 @@ $ git diff --word-diff
 
 ---
 
-# Version history #
-
-###### (List of changes) ######
+# Version history
 
 * 0.1.5 - added "ellipsis" class and extend (for single line)
 * 0.1.4 - added default styles for inputs and buttons
 * 0.1.3 - added "clearfix" class and extend
 * 0.1.2 - added "startup guide"
 * 0.1.0 - initial structure and files
+
+---
+---
+---
+
+
+# Purpose of 'ffw_theme' project
+
+* Wide discussion, to result in a single FE standard (theme) to be used.
+
+### Benefits
+
+* Easier and more pleasant work in FE department.
+* Easy switch between projects. Anyone should be able to work on any project.
+* Better quality of the product and personal improvement.
+
+### What could be done?
+
+* Drupal, .NET, and Design (prototype) departments could use single FE 'theme'.
+* Single tool for process automation (CSS, JavaScript, style guides etc.), e.g. Grunt.
+* Standardized directory structure and more standards (upon discussion). GitLab.
+
+### Who should work on this?
+
+* Everybody could help in the process, but experience in the field is a must.
+* We should keep the Design department informed and (probably) listen to them.
+
+### When could this be ready to see in action?
+
+* Depends on the time dedicated to work on this.
+* Could be 1st of July 2015 (see previous one). Update: working version is now available
+
+---
+
+# Topics for discussion related to *ffw_theme*
+
+* SASS - we decided to use [Compass](http://compass-style.org/), need training
+* Grid system - we decided to use [Susy](http://susy.oddbird.net/), need training
+* Automation - we decided to use automation - [Grunt](http://gruntjs.com/), need training
+* Drupal, PHP
+* CSS reset - NO! CSS normalize, default styling for some elements
+* JavaScript and libraries
+* Images, icon fonts, fonts
+* FE performance optimization
+* Documentation and compliance with the standard
+* Directory structure
+* ...missed something? Please add here!
