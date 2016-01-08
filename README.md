@@ -97,7 +97,7 @@ $ grunt watch
 ---
 
 # Tips #
----
+
 * Compare (diff) a single line in git (suitable for compressed CSS)
 
 ```
@@ -109,7 +109,8 @@ $ git diff --word-diff
 ---
 
 # Version history #
----
+
+###### (List of changes) ######
 
 * 0.1.5 - added "ellipsis" class and extend (for single line)
 * 0.1.4 - added default styles for inputs and buttons
