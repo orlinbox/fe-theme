@@ -47,7 +47,8 @@ hr {
 }
 
 fieldset {
-  display: table-cell;
+  display: table-cell; /* width fix for FF */
+  min-width: inherit; /* width fix for Chrome */
   border: 1px solid $body-color;
   margin: 0;
   padding: 1em;
