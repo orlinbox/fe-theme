@@ -1,1 +1,1 @@
-console.log('FFW FE theme');
+console.log('FE theme');

@@ -1,1 +1,1 @@
-!function(a,b){b["true"]=a,console.log("FFW FE theme")}({},function(){return this}());
+!function(a,b){console.log("FE theme"),b["true"]=a}({},function(){return this}());
