@@ -1,1 +1,1 @@
-!function(a,b){console.log("FE theme"),b["true"]=a}({},function(){return this}());
+console.log("FE theme");
