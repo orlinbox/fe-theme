@@ -13,6 +13,17 @@
 @import '_mixins.scss';
 @import '_extends.scss';
 
+/*!*
+ * Foundation for Sites by ZURB
+ * Version 6.3.0
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+@import '_foundation.scss';
+@include foundation-grid; /* foundation/settings/settings */
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+
 /* Website styles */
 
 @import '_inputs_and_buttons.scss';

@@ -14,11 +14,11 @@
 %button {
   box-sizing: border-box;
   display: inline-block;
-  height: $input-height;
-  padding: $input-padding ($input-padding*4);
+  height: $inpt-height;
+  padding: $inpt-padding ($inpt-padding*4);
   border: 1px solid $body-color;
-  border-radius: $input-radius;
-  line-height: $input-line-height;
+  border-radius: $inpt-radius;
+  line-height: $inpt-line-height;
   color: $body-background-color;
   background: $body-color;
   text-decoration: none;

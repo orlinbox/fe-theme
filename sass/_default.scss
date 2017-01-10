@@ -77,6 +77,12 @@ fieldset {
   background: $selection-bg;
 }
 
+.row,
+.column,
+.columns {
+  box-sizing: border-box;
+}
+
 /* Demo (remove me!) */
 div {
   padding: 3px;

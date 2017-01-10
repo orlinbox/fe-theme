@@ -11,7 +11,7 @@ button,
 }
 input[type='file'] {
   height: auto;
-  padding: $input-padding;
+  padding: $inpt-padding;
 }
 
 /* Inputs */
@@ -23,13 +23,13 @@ input[type='email'],
 input[type='password'],
 input[type='number'] {
   box-sizing: border-box;
-  height: $input-height;
-  padding: $input-padding;
-  border: 1px solid $input-border;
-  border-radius: $input-radius;
-  line-height: $input-line-height;
+  height: $inpt-height;
+  padding: $inpt-padding;
+  border: 1px solid $inpt-border;
+  border-radius: $inpt-radius;
+  line-height: $inpt-line-height;
   color: $body-color;
-  background-color: $input-bg;
+  background-color: $inpt-bg;
 
   &[disabled],
   .disabled {

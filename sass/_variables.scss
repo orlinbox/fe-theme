@@ -1,12 +1,5 @@
 /* Variables used in SASS */
 
-/* Susy */
-
-$susy: (
-  columns: 12,
-  gutters: 0,
-);
-
 /* Colors */
 
 $body-color: #333333;
@@ -15,18 +8,18 @@ $body-background-color: #cccccc;
 $link-color: #999999;
 $link-hover-color: #333333;
 
-$input-bg: #ffffff;
-$input-border: $body-color;
+$inpt-bg: #ffffff;
+$inpt-border: $body-color;
 
 $selection-color: $body-background-color;
 $selection-bg: $body-color;
 
 /* Inputs and buttons */
 
-$input-radius: 3px;
-$input-line-height: 1.5em;
-$input-padding: 0.25em;
-$input-height: $input-line-height + ($input-padding*2);
+$inpt-radius: 3px;
+$inpt-line-height: 1.5em;
+$inpt-padding: 0.25em;
+$inpt-height: $inpt-line-height + ($inpt-padding*2);
 
 /* Sizes */
 

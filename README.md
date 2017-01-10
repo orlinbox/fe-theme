@@ -1,5 +1,5 @@
 # FE Theme
-* version: 1.0.0
+* version: 2.0.0
 
 ## Current software requirements
 
@@ -55,6 +55,7 @@ $ git diff --word-diff
 
 ## Version history
 
+* 2.0.0 - added foundation (grid only)
 * 1.0.0 - cloned from FFW theme and removed Susy
 * 0.1.6 - added default print styles
 * 0.1.5 - added "ellipsis" class and extend (for single line)
