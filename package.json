@@ -1,15 +1,27 @@
 {
-  "name": "fe_theme",
-  "version": "1.0.0",
+  "name": "fe-theme",
+  "version": "3.0.0",
   "description": "FE theme",
-  "dependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-contrib-compass": "^1.0.3",
-    "grunt-css-count": "^0.3.1",
-    "grunt-contrib-jshint": "^0.11.2",
-    "grunt-contrib-uglify": "^0.9.1",
-    "grunt-notify": "^0.4.1",
-    "time-grunt": "^1.2.0"
-  }
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "latest",
+    "jshint": "latest",
+    "uglifyjs": "latest",
+    "onchange": "latest",
+    "concurrently": "latest"
+  },
+  "scripts": {
+    "sass": "node-sass --recursive sass/styles.scss --include-path sass --output compiled --output-style compressed",
+    "sass-watch": "onchange 'sass' -v -- npm run sass",
+    "lint": "jshint js",
+    "lint-watch": "onchange 'js/**/*.js' -v -- npm run lint",
+    "uglify": "uglifyjs js/*.js -o compiled/script.js",
+    "uglify-watch": "onchange 'js/**/*.js' -v -- npm run uglify",
+    "watch": "concurrently --kill-others 'npm run sass-watch' 'npm run lint-watch' 'npm run uglify-watch'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orlinbox/fe-theme.git"
+  },
+  "license": "MIT"
 }

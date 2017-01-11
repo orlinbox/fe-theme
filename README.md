@@ -1,14 +1,11 @@
 # FE Theme
-* version: 2.0.0
+* version: 3.0.0
 
 ## Current software requirements
 
 * git
 * node.js
 * npm
-* grunt 0.4.5
-* sass 3.4.13
-* compass 1.0.3
 
 ## Startup guide
 
@@ -31,7 +28,7 @@ $ cd fe
 $ rm -rf .git
 ```
 
-* Install Grunt related stuff as a super user. You might need to change "sudo" according to your OS.
+* Install npm modules as a super user. You might need to change "sudo" according to your OS.
 
 ```
 $ sudo npm install
@@ -40,7 +37,7 @@ $ sudo npm install
 * Start work
 
 ```
-$ grunt watch
+$ npm run watch
 ```
 
 ## Tips
@@ -51,10 +48,9 @@ $ grunt watch
 $ git diff --word-diff
 ```
 
-* If you plan to use SVGs in the project, you should consider using [SVGO](https://github.com/svg/svgo), which is also available as a [Grunt task](https://github.com/sindresorhus/grunt-svgmin). Another solution for images is [Grunticon](https://github.com/filamentgroup/grunticon).
-
 ## Version history
 
+* 3.0.0 - npm as a build tool
 * 2.0.0 - added foundation (grid only)
 * 1.0.0 - cloned from FFW theme and removed Susy
 * 0.1.6 - added default print styles
