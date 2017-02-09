@@ -27,6 +27,7 @@
 
   &:hover,
   &:active {
+    border: 1px solid $link-color;
     color: $body-color;
     background: $link-color;
     text-decoration: none;
