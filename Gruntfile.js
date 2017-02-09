@@ -1,6 +1,6 @@
 // Define JavaScript files and their order for aggregation
 var js_files = [
-  'js/custom.js',
+  'js_src/custom.js',
 ];
 
 // Grunt
@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     jshint: {
       files: [
         'Gruntfile.js',
-        'js/**/*.js',
+        'js_src/**/*.js',
       ],
       options: {
         globals: {
