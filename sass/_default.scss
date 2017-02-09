@@ -6,8 +6,6 @@ html {
 
 body {
   min-height: 100%;
-  font-size: $font-normal;
-  line-height: 1.3;
   color: $body-color;
   background-color: $body-background-color;
 }
@@ -23,6 +21,7 @@ textarea {
 img {
   max-width: 100%;
   height: auto;
+  vertical-align: middle;
 }
 
 a {
@@ -85,6 +84,5 @@ fieldset {
 
 /* Demo (remove me!) */
 div {
-  padding: 3px;
-  border: 1px solid $body-color;
+  background: rgba(0,0,0,0.05);
 }

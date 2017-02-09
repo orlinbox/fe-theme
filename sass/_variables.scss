@@ -1,12 +1,18 @@
 /* Variables used in SASS */
 
+/* IMPORTANT:
+
+Grid variables are located in foundation/settings/settings
+
+*/
+
 /* Colors */
 
-$body-color: #333333;
-$body-background-color: #cccccc;
+$body-color: #102542;
+$body-background-color: #cdd7d6;
 
-$link-color: #999999;
-$link-hover-color: #333333;
+$link-color: #f87060;
+$link-hover-color: darken($link-color, 10%);
 
 $inpt-bg: #ffffff;
 $inpt-border: $body-color;
@@ -25,13 +31,9 @@ $inpt-height: $inpt-line-height + ($inpt-padding*2);
 
 $space: 10px;
 
-/* Font sizes */
-
-$font-normal: 15px;
-
 /* Times */
 
-$transition-time: 400ms;
+$transition-time: 200ms;
 
 /* More */
 

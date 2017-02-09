@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     compass: {
       dev: {
         options: {
-          cssDir: 'compiled',
+          cssDir: 'css_js',
           sassDir: 'sass',
           config: 'config.rb',
         },
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       },
       my_target: {
         files : {
-          'compiled/script.js': js_files,
+          'css_js/script.js': js_files,
         },
       },
     },
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     csscount: {
       dev: {
         src: [
-          'compiled/*.css',
+          'css_js/*.css',
         ],
         options: {
           maxSelectors: 4000,
