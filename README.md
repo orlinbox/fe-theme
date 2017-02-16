@@ -10,6 +10,10 @@
 * sass 3.4.13
 * compass 1.0.3
 
+## Browser support
+
+* IE9+
+
 ## Startup guide
 
 * Check software requirements (listed above)
@@ -45,6 +49,7 @@ $ grunt watch
 
 ## Tips
 
+* Check styleguide.html for quick startup
 * Compare (diff) a single line in git (suitable for compressed CSS)
 
 ```
@@ -55,7 +60,7 @@ $ git diff --word-diff
 
 ## Version history
 
-* 2.0.0 - added foundation (grid only)
+* 2.0.0 - added Zurb Foundation v6.3.0 (grid only)
 * 1.0.0 - cloned from FFW theme and removed Susy
 * 0.1.6 - added default print styles
 * 0.1.5 - added "ellipsis" class and extend (for single line)
