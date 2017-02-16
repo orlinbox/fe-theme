@@ -7,6 +7,10 @@
 * node.js
 * npm
 
+## Browser support
+
+* IE9+
+
 ## Startup guide
 
 * Check software requirements (listed above)
@@ -42,6 +46,8 @@ $ npm run watch
 
 ## Tips
 
+* Check styleguide.html for quick startup
+* See all the available npm commands (scripts) in package.json
 * Compare (diff) a single line in git (suitable for compressed CSS)
 
 ```
@@ -50,8 +56,8 @@ $ git diff --word-diff
 
 ## Version history
 
-* 3.0.0 - npm as a build tool
-* 2.0.0 - added foundation (grid only)
+* 3.0.0 - npm as a build tool, instead of Grunt
+* 2.0.0 - added Zurb Foundation v6.3.0 (grid only)
 * 1.0.0 - cloned from FFW theme and removed Susy
 * 0.1.6 - added default print styles
 * 0.1.5 - added "ellipsis" class and extend (for single line)
