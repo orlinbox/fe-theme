@@ -12,12 +12,12 @@
   },
   "scripts": {
     "css": "node-sass --recursive sass/styles.scss --include-path sass --output css_js --output-style compressed",
-    "css-watch": "onchange 'sass' -v -- npm run css",
+    "css-watch": "onchange \"sass\" -v -- npm run css",
     "lint": "jshint js_src",
-    "lint-watch": "onchange 'js_src/**/*.js' -v -- npm run lint",
-    "js": "uglifyjs js_src/*.js -o css_js/script.js",
-    "js-watch": "onchange 'js_src/**/*.js' -v -- npm run js",
-    "watch": "concurrently --kill-others 'npm run css-watch' 'npm run lint-watch' 'npm run js-watch'"
+    "lint-watch": "onchange \"js_src/**/*.js\" -v -- npm run lint",
+    "js": "uglifyjs js_src/custom.js -co css_js/custom.js",
+    "js-watch": "onchange \"js_src/**/*.js\" -v -- npm run js",
+    "watch": "concurrently --kill-others \"npm run css-watch\" \"npm run lint-watch\" \"npm run js-watch\""
   },
   "repository": {
     "type": "git",
