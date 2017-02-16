@@ -1,15 +1,15 @@
-# FE Theme
+# FE Theme (npm as a build tool)
 * version: 3.0.0
+
+## Browser support
+
+* IE9+
 
 ## Current software requirements
 
 * git
 * node.js
 * npm
-
-## Browser support
-
-* IE9+
 
 ## Startup guide
 
