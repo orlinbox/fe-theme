@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       },
       my_target: {
         files : {
-          'css_js/script.js': js_files,
+          'css_js/custom.js': js_files,
         },
       },
     },
