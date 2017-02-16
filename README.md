@@ -26,6 +26,12 @@ $ git clone git@github.com:orlinbox/fe-theme.git fe
 $ cd fe
 ```
 
+* Switch to npm branch
+
+```
+$ git checkout npm
+```
+
 * IMPORTANT: remove the local repo by removing the .git directory. You do NOT want to commit to this repo.
 
 ```
