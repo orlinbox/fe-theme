@@ -1,5 +1,10 @@
-# FE Theme
+# FE Theme (with Grunt)
 * version: 2.0.0
+* "npm as a build tool" version is available in npm branch
+
+## Browser support
+
+* IE9+
 
 ## Current software requirements
 
@@ -9,10 +14,6 @@
 * grunt 0.4.5
 * sass 3.4.13
 * compass 1.0.3
-
-## Browser support
-
-* IE9+
 
 ## Startup guide
 
