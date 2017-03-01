@@ -27,12 +27,12 @@ img {
 a {
   color: $link-color;
   outline-color: $link-color;
-  transition: color $transition-time;
+  @include transition(color);
 
   &:hover,
   &:active {
     color: $link-hover-color;
-    transition: color ($transition-time/2);
+    @include transition(color, $transition-time/2);
   }
 }
 
