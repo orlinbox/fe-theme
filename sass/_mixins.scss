@@ -1,2 +1,16 @@
 /* SASS mixins */
 
+@mixin transition($property, $duration: $transition-time, $easing: $transition-easing) {
+  transition: $property $duration $easing;
+}
+
+@mixin aspect-ratio($width: 16, $height: 9) {
+  position: relative;
+
+  &:before {
+    display: block;
+    content: ' ';
+    width: 100%;
+    padding-top: ($height/$width) * 100%;
+  }
+}

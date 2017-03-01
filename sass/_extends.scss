@@ -23,7 +23,7 @@
   background: $body-color;
   text-decoration: none;
   cursor: pointer;
-  transition: all $transition-time;
+  @include transition(all);
 
   &:hover,
   &:active {
@@ -31,7 +31,7 @@
     color: $body-color;
     background: $link-color;
     text-decoration: none;
-    transition: all ($transition-time/2);
+    @include transition(all, $transition-time/2);
   }
 
   &[disabled],
@@ -48,4 +48,12 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+@mixin full-size-absolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
