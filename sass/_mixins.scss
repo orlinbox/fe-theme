@@ -10,7 +10,9 @@
 	@else if $size == large {
 		@media screen and (min-width: $screen-m) { @content ; }
 	}
-	@else { }
+	@else {
+		@error "Undefined breakpoint!";
+	}
 }
 
 @mixin transition($property, $duration: $transition-time, $easing: $transition-easing) {
@@ -26,4 +28,8 @@
 		width: 100%;
 		padding-top: ($height/$width) * 100%;
 	}
+}
+
+@mixin grid-width($cols) {
+	width: ($cols/12*100%);
 }

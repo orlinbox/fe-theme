@@ -1,5 +1,5 @@
 # FE Theme (with Grunt)
-* version: 2.0.0
+* version: 2.1.0
 * "npm as a build tool" version is available in npm branch
 
 ## Browser support
@@ -57,15 +57,4 @@ $ grunt watch
 $ git diff --word-diff
 ```
 
-* If you plan to use SVGs in the project, you should consider using [SVGO](https://github.com/svg/svgo), which is also available as a [Grunt task](https://github.com/sindresorhus/grunt-svgmin). Another solution for images is [Grunticon](https://github.com/filamentgroup/grunticon).
-
-## Version history
-
-* 2.0.0 - added Zurb Foundation v6.3.0 (grid only)
-* 1.0.0 - cloned from FFW theme and removed Susy
-* 0.1.6 - added default print styles
-* 0.1.5 - added "ellipsis" class and extend (for single line)
-* 0.1.4 - added default styles for inputs and buttons
-* 0.1.3 - added "clearfix" class and extend
-* 0.1.2 - added "startup guide"
-* 0.1.0 - initial structure and files
+* If you plan to use SVGs in the project, you should consider using [SVGO](https://github.com/svg/svgo)

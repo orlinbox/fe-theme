@@ -1,6 +1,8 @@
 // Define JavaScript files and their order for aggregation
 var js_files = [
-	'js_src/custom.js',
+	'javascript/vendor/jquery-3.1.1.min.js',
+	'javascript/vendor/jquery.detect_swipe.js',
+	'javascript/custom/custom.js',
 ];
 
 // Grunt
@@ -12,7 +14,7 @@ module.exports = function(grunt) {
 		jshint: {
 			files: [
 				'Gruntfile.js',
-				'js_src/**/*.js',
+				'javascript/custom/**/*.js',
 			],
 			options: {
 				globals: {
@@ -36,10 +38,11 @@ module.exports = function(grunt) {
 		uglify: {
 			options: {
 				mangle: false,
+				preserveComments: 'some',
 			},
 			my_target: {
 				files : {
-					'css_js/custom.js': js_files,
+					'css_js/scripts.js': js_files,
 				},
 			},
 		},

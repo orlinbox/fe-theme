@@ -1,10 +1,19 @@
 /* Variables used in SASS */
 
-/* Grid */
+/* Breakpoints */
 
 $screen-s: 720px;
 $screen-m: 1200px;
 
+/*
+@include breakpoint(small) {}
+@include breakpoint(medium) {}
+@include breakpoint(large) {}
+*/
+
+/* Grid */
+
+$site-width: 1000px;
 $gutter-s: 30px; /* up to $screen-s */
 $gutter-m: 40px; /* $screen-s and up */
 
@@ -33,6 +42,16 @@ $inpt-height: $inpt-line-height + ($inpt-padding*2);
 
 $space-s: $gutter-s/2;
 $space-m: $gutter-m/2;
+
+/* Text */
+
+$lh: 1.3;
+$text-s: 1rem;
+$text-m: 1.1rem;
+$title-xs: 1.2rem;
+$title-s: 1.5rem;
+$title-m: 2rem;
+$title-l: 2.5rem;
 
 /* Times */
 
