@@ -1,5 +1,5 @@
 # FE Theme (npm as a build tool)
-* version: 3.0.0
+* version: 3.1.0
 
 ## Browser support
 
@@ -60,14 +60,4 @@ $ npm run watch
 $ git diff --word-diff
 ```
 
-## Version history
-
-* 3.0.0 - npm as a build tool, instead of Grunt
-* 2.0.0 - added Zurb Foundation v6.3.0 (grid only)
-* 1.0.0 - cloned from FFW theme and removed Susy
-* 0.1.6 - added default print styles
-* 0.1.5 - added "ellipsis" class and extend (for single line)
-* 0.1.4 - added default styles for inputs and buttons
-* 0.1.3 - added "clearfix" class and extend
-* 0.1.2 - added "startup guide"
-* 0.1.0 - initial structure and files
+* If you plan to use SVGs in the project, you should consider using [SVGO](https://github.com/svg/svgo)

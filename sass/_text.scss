@@ -1,60 +1,32 @@
 /* Text sizes */
 
 body {
-  font-size: 1.1rem;
-  line-height: 1.3;
+	font-size: $text-s;
+	line-height: $lh;
 
-  @include breakpoint(medium) {
-    font-size: 1rem;
-  }
+	@include breakpoint(medium) {
+		font-size: $text-m;
+	}
 }
 
 /* Titles */
 
 h1 {
-  font-size: 2rem;
+	font-size: $title-s;
 
-  @include breakpoint(medium) {
-    font-size: 2.5rem;
-  }
+	@include breakpoint(medium) {
+		font-size: $title-m;
+	}
 
-  @include breakpoint(xlarge) {
-    font-size: 3rem;
-  }
+	@include breakpoint(large) {
+		font-size: $title-l;
+	}
 }
 
-h2 {
-  font-size: 1.6rem;
+h2, h3, h4, h5, h6 {
+	font-size: $title-s;
 
-  @include breakpoint(medium) {
-    font-size: 1.8rem;
-  }
-
-  @include breakpoint(xlarge) {
-    font-size: 2rem;
-  }
-}
-
-h3 {
-  font-size: 1.4rem;
-
-  @include breakpoint(medium) {
-    font-size: 1.6rem;
-  }
-
-  @include breakpoint(xlarge) {
-    font-size: 1.8rem;
-  }
-}
-
-h4, h5, h6 {
-  font-size: 1.2rem;
-
-  @include breakpoint(medium) {
-    font-size: 1.4rem;
-  }
-
-  @include breakpoint(xlarge) {
-    font-size: 1.5rem;
-  }
+	@include breakpoint(small) {
+		font-size: $title-xs;
+	}
 }

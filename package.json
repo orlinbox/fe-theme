@@ -1,27 +1,27 @@
 {
-  "name": "fe-theme",
-  "version": "3.0.0",
-  "description": "FE theme",
-  "dependencies": {},
-  "devDependencies": {
-    "node-sass": "latest",
-    "jshint": "latest",
-    "uglifyjs": "latest",
-    "onchange": "latest",
-    "concurrently": "latest"
-  },
-  "scripts": {
-    "css": "node-sass --recursive sass/styles.scss --include-path sass --output css_js --output-style compressed",
-    "css-watch": "onchange \"sass\" -v -- npm run css",
-    "lint": "jshint js_src",
-    "lint-watch": "onchange \"js_src/**/*.js\" -v -- npm run lint",
-    "js": "uglifyjs js_src/custom.js -co css_js/custom.js",
-    "js-watch": "onchange \"js_src/**/*.js\" -v -- npm run js",
-    "watch": "concurrently --kill-others \"npm run css-watch\" \"npm run lint-watch\" \"npm run js-watch\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/orlinbox/fe-theme.git"
-  },
-  "license": "MIT"
+	"name": "fe-theme",
+	"version": "3.1.0",
+	"description": "FE theme",
+	"dependencies": {},
+	"devDependencies": {
+		"node-sass": "latest",
+		"jshint": "latest",
+		"uglifyjs": "latest",
+		"onchange": "latest",
+		"concurrently": "latest"
+	},
+	"scripts": {
+		"css": "node-sass --recursive sass/styles.scss --include-path sass --output css_js --output-style compressed",
+		"css-watch": "onchange \"sass\" -v -- npm run css",
+		"lint": "jshint javascript/custom",
+		"lint-watch": "onchange \"javascript/custom/**/*.js\" -v -- npm run lint",
+		"js": "uglifyjs javascript/vendor/jquery-3.1.1.min.js javascript/vendor/jquery.detect_swipe.js javascript/custom/custom.js --no-mangle --no-dead-code -o  css_js/scripts.js",
+		"js-watch": "onchange \"javascript/**/*.js\" -v -- npm run js",
+		"watch": "concurrently --kill-others \"npm run css-watch\" \"npm run lint-watch\" \"npm run js-watch\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/orlinbox/fe-theme.git"
+	},
+	"license": "MIT"
 }
