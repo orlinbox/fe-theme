@@ -49,11 +49,3 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-
-@mixin full-size-absolute {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-}
