@@ -6,12 +6,12 @@ input[type='reset'],
 input[type='file'],
 button,
 .button {
-  @extend %button;
-  -webkit-appearance: none;
+	@extend %button;
+	-webkit-appearance: none;
 }
 input[type='file'] {
-  height: auto;
-  padding: $inpt-padding;
+	height: auto;
+	padding: $inpt-padding;
 }
 
 /* Inputs */
@@ -22,48 +22,48 @@ input[type='text'],
 input[type='email'],
 input[type='password'],
 input[type='number'] {
-  box-sizing: border-box;
-  height: $inpt-height;
-  padding: $inpt-padding;
-  border: 1px solid $inpt-border;
-  border-radius: $inpt-radius;
-  line-height: $inpt-line-height;
-  color: $body-color;
-  background-color: $inpt-bg;
+	box-sizing: border-box;
+	height: $inpt-height;
+	padding: $inpt-padding;
+	border: 1px solid $inpt-border;
+	border-radius: $inpt-radius;
+	line-height: $inpt-line-height;
+	color: $body-color;
+	background-color: $inpt-bg;
 
-  &[disabled],
-  .disabled {
-    opacity: $disabled-opacity;
-  }
+	&[disabled],
+	.disabled {
+		opacity: $disabled-opacity;
+	}
 }
 textarea {
-  height: auto;
+	height: auto;
 }
 
 input,
 textarea {
-  &::-webkit-input-placeholder {
-     color: $body-color;
-     opacity: $disabled-opacity !important;
-  }
+	&::-webkit-input-placeholder {
+		 color: $body-color;
+		 opacity: $disabled-opacity !important;
+	}
 
-  &::-moz-placeholder {
-     color: $body-color;
-     opacity: $disabled-opacity !important;
-  }
+	&::-moz-placeholder {
+		 color: $body-color;
+		 opacity: $disabled-opacity !important;
+	}
 
-  &:-ms-input-placeholder {
-     color: $body-color;
-     opacity: $disabled-opacity !important;
-  }
+	&:-ms-input-placeholder {
+		 color: $body-color;
+		 opacity: $disabled-opacity !important;
+	}
 }
 
 input,
 select,
 textarea {
-  max-width: 100%;
+	max-width: 100%;
 
-  &:focus {
-    outline-color: $body-color;
-  }
+	&:focus {
+		outline-color: $body-color;
+	}
 }

@@ -1,10 +1,12 @@
 /* Variables used in SASS */
 
-/* IMPORTANT:
+/* Grid */
 
-Grid variables are located in foundation/settings/settings
+$screen-s: 720px;
+$screen-m: 1200px;
 
-*/
+$gutter-s: 30px; /* up to $screen-s */
+$gutter-m: 40px; /* $screen-s and up */
 
 /* Colors */
 
@@ -27,16 +29,16 @@ $inpt-line-height: 1.5em;
 $inpt-padding: 0.25em;
 $inpt-height: $inpt-line-height + ($inpt-padding*2);
 
-/* Sizes */
+/* Spaces */
 
-$space: 10px;
+$space-s: $gutter-s/2;
+$space-m: $gutter-m/2;
 
 /* Times */
 
 $transition-time: 200ms;
 
-/* More */
+/* Other */
 
 $disabled-opacity: 0.5;
 $transition-easing: ease-out;
-
