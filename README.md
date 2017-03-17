@@ -1,4 +1,4 @@
-# FE Theme - NPM as a build tool
+# FE Theme - Gulp
 * version: 1.0
 
 ## Browser support
@@ -10,7 +10,7 @@
 * git
 * node.js
 * npm
-* grunt 1.0.1
+* gulp 3.9.1
 
 ## Startup guide
 
@@ -27,10 +27,10 @@ $ git clone git@github.com:orlinbox/fe-theme.git fe
 $ cd fe
 ```
 
-* Switch to grunt branch
+* Switch to gulp branch
 
 ```
-$ git checkout grunt
+$ git checkout gulp
 ```
 
 * IMPORTANT: remove the local repo by removing the .git directory. You do NOT want to commit to this repo.
@@ -39,7 +39,7 @@ $ git checkout grunt
 $ rm -rf .git
 ```
 
-* Install Grunt related stuff as a super user. You might need to change "sudo" according to your OS.
+* Install Gulp related stuff as a super user. You might need to change "sudo" according to your OS.
 
 ```
 $ sudo npm install
@@ -48,7 +48,7 @@ $ sudo npm install
 * Start work
 
 ```
-$ grunt watch
+$ gulp watch
 ```
 
 ## Tips

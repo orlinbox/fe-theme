@@ -1,15 +1,16 @@
 {
-	"name": "orl-fe-theme-grunt",
+	"name": "orl-fe-theme-gulp",
 	"version": "1.0.0",
 	"description": "FE theme",
 	"dependencies": {
-		"grunt": "^1.0.1",
-		"grunt-contrib-watch": "^1.0.0",
-		"grunt-sass": "^2.0.0",
-		"grunt-css-count": "^0.3.2",
-		"grunt-contrib-jshint": "^1.1.0",
-		"grunt-contrib-uglify": "^2.2.0",
-		"grunt-notify": "^0.4.5"
+		"gulp": "^3.9.1",
+		"gulp-sass": "^3.1.0",
+		"jshint": "^2.9.4",
+		"gulp-jshint": "^2.0.4",
+		"gulp-concat": "^2.6.1",
+		"gulp-notify": "^3.0.0",
+		"gulp-grunt": "^0.5.5",
+		"grunt-css-count": "^0.3.2"
 	},
 	"repository": {
 		"type": "git",
