@@ -1,4 +1,4 @@
-# FE Theme - NPM as a build tool
+# FE Theme - Grunt
 * version: 1.0
 
 ## Browser support
