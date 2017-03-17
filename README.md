@@ -1,6 +1,5 @@
 # FE Theme (with Grunt)
 * version: 2.1.0
-* "npm as a build tool" version is available in npm branch
 
 ## Browser support
 
@@ -28,6 +27,12 @@ $ git clone git@github.com:orlinbox/fe-theme.git fe
 
 ```
 $ cd fe
+```
+
+* Switch to grunt branch
+
+```
+$ git checkout grunt
 ```
 
 * IMPORTANT: remove the local repo by removing the .git directory. You do NOT want to commit to this repo.
