@@ -23,13 +23,15 @@ module.exports = function(grunt) {
 			},
 		},
 
-		// compass
-		compass: {
+		// sass
+		sass: {
 			dev: {
 				options: {
-					cssDir: 'css_js',
-					sassDir: 'sass',
-					config: 'config.rb',
+					style: 'compressed', //nested, compact, expanded, compressed
+					sourcemap: 'none',
+				},
+				files: {
+					'css_js/styles.css': 'sass/styles.scss',
 				},
 			},
 		},
@@ -38,7 +40,10 @@ module.exports = function(grunt) {
 		uglify: {
 			options: {
 				mangle: false,
-				preserveComments: 'some',
+				preserveComments: function(node, comment) {
+					// preserve comments that start with a bang
+					return /^!/.test(comment.value);
+				},
 			},
 			my_target: {
 				files : {
@@ -65,7 +70,7 @@ module.exports = function(grunt) {
 		watch: {
 			set1: {
 				files: 'sass/**/*.scss',
-				tasks: ['compass'],
+				tasks: ['sass'],
 			},
 			set2: {
 				files: ['<%= csscount.dev.src %>'],
@@ -83,20 +88,20 @@ module.exports = function(grunt) {
 				title: "Grunt",
 				enabled: true,
 				success: true,
-				duration: 3,
+				duration: 2,
 			}
 		},
 
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-css-count');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-notify');
 
-	grunt.registerTask('default', ['compass', 'csscount', 'jshint', 'uglify']);
+	grunt.registerTask('default', ['sass', 'csscount', 'jshint', 'uglify']);
 
 	grunt.task.run('notify_hooks');
 

@@ -10,9 +10,8 @@
 * git
 * node.js
 * npm
-* grunt 0.4.5
-* sass 3.4.13
-* compass 1.0.3
+* grunt 1.0.1
+* sass 3.4.24
 
 ## Startup guide
 
