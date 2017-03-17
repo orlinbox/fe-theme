@@ -1,5 +1,5 @@
-# FE Theme (npm as a build tool)
-* version: 3.1.0
+# FE Theme - NPM as a build tool
+* version: 1.0
 
 ## Browser support
 

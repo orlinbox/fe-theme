@@ -1,6 +1,6 @@
 {
-	"name": "fe-theme",
-	"version": "3.1.0",
+	"name": "orl-fe-theme-npm",
+	"version": "1.0.0",
 	"description": "FE theme",
 	"dependencies": {},
 	"devDependencies": {
