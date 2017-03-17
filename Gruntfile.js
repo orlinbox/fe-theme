@@ -25,11 +25,10 @@ module.exports = function(grunt) {
 
 		// sass
 		sass: {
+			options: {
+				outputStyle: 'compressed', //nested, compact, expanded, compressed
+			},
 			dev: {
-				options: {
-					style: 'compressed', //nested, compact, expanded, compressed
-					sourcemap: 'none',
-				},
 				files: {
 					'css_js/styles.css': 'sass/styles.scss',
 				},
@@ -95,7 +94,7 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-css-count');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');

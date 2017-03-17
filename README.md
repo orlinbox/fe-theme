@@ -11,7 +11,6 @@
 * node.js
 * npm
 * grunt 1.0.1
-* sass 3.4.24
 
 ## Startup guide
 
