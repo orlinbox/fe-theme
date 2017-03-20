@@ -1,55 +1,7 @@
-// Define JavaScript files and their order for aggregation
-var js_files = [
-	'javascript/vendor/jquery-3.1.1.min.js',
-	'javascript/vendor/jquery.detect_swipe.js',
-	'javascript/custom/custom.js',
-];
-
 // Grunt
 module.exports = function(grunt) {
 
 	grunt.initConfig({
-
-		// jshint
-		jshint: {
-			files: [
-				'Gruntfile.js',
-				'javascript/custom/**/*.js',
-			],
-			options: {
-				globals: {
-					jQuery: true,
-				},
-			},
-		},
-
-		// sass
-		sass: {
-			options: {
-				outputStyle: 'compressed', //nested, compact, expanded, compressed
-			},
-			dev: {
-				files: {
-					'css_js/styles.css': 'sass/styles.scss',
-				},
-			},
-		},
-
-		// uglify
-		uglify: {
-			options: {
-				mangle: false,
-				preserveComments: function(node, comment) {
-					// preserve comments that start with a bang
-					return /^!/.test(comment.value);
-				},
-			},
-			my_target: {
-				files : {
-					'css_js/scripts.js': js_files,
-				},
-			},
-		},
 
 		// csscount
 		csscount: {
@@ -65,43 +17,10 @@ module.exports = function(grunt) {
 			},
 		},
 
-		// watch
-		watch: {
-			set1: {
-				files: 'sass/**/*.scss',
-				tasks: ['sass'],
-			},
-			set2: {
-				files: ['<%= csscount.dev.src %>'],
-				tasks: ['csscount'],
-			},
-			set3: {
-				files: ['<%= jshint.files %>'],
-				tasks: ['jshint', 'uglify'],
-			},
-		},
-
-		// notify
-		notify_hooks: {
-			options: {
-				title: "Grunt",
-				enabled: true,
-				success: true,
-				duration: 2,
-			}
-		},
-
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-css-count');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-notify');
 
-	grunt.registerTask('default', ['sass', 'csscount', 'jshint', 'uglify']);
-
-	grunt.task.run('notify_hooks');
+	grunt.registerTask('default', ['csscount']);
 
 };

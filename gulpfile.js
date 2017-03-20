@@ -8,7 +8,8 @@ var js_files_concat = [
 // Define JavaScript files for lint
 var js_files_lint = [
 	'./gulpfile.js',
-	'javascript/custom/custom.js',
+	'./Gruntfile.js',
+	'javascript/custom/**/*.js',
 ];
 
 var gulp = require('gulp');
@@ -17,6 +18,7 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var notify = require("gulp-notify");
 var gulp_grunt = require('gulp-grunt');
+require('gulp-grunt')(gulp);
 
 gulp.task('jshint', function() {
 	return gulp.src(js_files_lint)
@@ -37,17 +39,13 @@ gulp.task('concat', function(cb) {
 		.pipe(gulp.dest('./css_js'));
 });
 
-gulp.task('count', function() {
-
-});
-
 gulp.task('watch', function() {
 	gulp.watch('./sass/**/*.scss', ['sass']);
 	gulp.watch(js_files_lint, ['jshint']);
 	gulp.watch(js_files_concat, ['concat']);
-	gulp.watch('./css_js/*.css', ['count']);
+	gulp.watch('./css_js/*.css', ['grunt-csscount']);
 });
 
 gulp.task('default', function() {
-	gulp.start('sass', 'jshint', 'concat', 'count');
+	gulp.start('jshint', 'sass', 'concat', 'grunt-csscount');
 });
