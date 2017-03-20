@@ -1,8 +1,14 @@
-// Define JavaScript files and their order for aggregation
-var js_files = [
+// // Define JavaScript files for aggregation
+var js_files_concat = [
 	'javascript/vendor/jquery-3.1.1.min.js',
 	'javascript/vendor/jquery.detect_swipe.js',
 	'javascript/custom/custom.js',
+];
+
+// Define JavaScript files for lint
+var js_files_lint = [
+	'Gruntfile.js',
+	'javascript/custom/**/*.js',
 ];
 
 // Grunt
@@ -12,10 +18,7 @@ module.exports = function(grunt) {
 
 		// jshint
 		jshint: {
-			files: [
-				'Gruntfile.js',
-				'javascript/custom/**/*.js',
-			],
+			files: js_files_lint,
 			options: {
 				globals: {
 					jQuery: true,
@@ -35,19 +38,14 @@ module.exports = function(grunt) {
 			},
 		},
 
-		// uglify
-		uglify: {
+		// concat
+		concat: {
 			options: {
-				mangle: false,
-				preserveComments: function(node, comment) {
-					// preserve comments that start with a bang
-					return /^!/.test(comment.value);
-				},
+				separator: '\n',
 			},
-			my_target: {
-				files : {
-					'css_js/scripts.js': js_files,
-				},
+			dist: {
+				src: js_files_concat,
+				dest: 'css_js/scripts.js',
 			},
 		},
 
@@ -72,12 +70,16 @@ module.exports = function(grunt) {
 				tasks: ['sass'],
 			},
 			set2: {
-				files: ['<%= csscount.dev.src %>'],
-				tasks: ['csscount'],
+				files: js_files_lint,
+				tasks: ['jshint'],
 			},
 			set3: {
-				files: ['<%= jshint.files %>'],
-				tasks: ['jshint', 'uglify'],
+				files: js_files_concat,
+				tasks: ['concat'],
+			},
+			set4: {
+				files: ['<%= csscount.dev.src %>'],
+				tasks: ['csscount'],
 			},
 		},
 
@@ -97,10 +99,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-css-count');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-notify');
 
-	grunt.registerTask('default', ['sass', 'csscount', 'jshint', 'uglify']);
+	grunt.registerTask('default', ['sass', 'csscount', 'jshint', 'concat']);
 
 	grunt.task.run('notify_hooks');
 
