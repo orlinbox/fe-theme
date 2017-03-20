@@ -30,6 +30,7 @@ module.exports = function(grunt) {
 		sass: {
 			options: {
 				outputStyle: 'compressed', //nested, compact, expanded, compressed
+				precision: 5,
 			},
 			dev: {
 				files: {
