@@ -6,7 +6,7 @@
 	"devDependencies": {
 		"node-sass": "latest",
 		"jshint": "latest",
-		"uglifyjs": "latest",
+		"concat": "latest",
 		"onchange": "latest",
 		"concurrently": "latest"
 	},
@@ -15,7 +15,7 @@
 		"css-watch": "onchange \"sass\" -v -- npm run css",
 		"lint": "jshint javascript/custom",
 		"lint-watch": "onchange \"javascript/custom/**/*.js\" -v -- npm run lint",
-		"js": "uglifyjs javascript/vendor/jquery-3.1.1.min.js javascript/vendor/jquery.detect_swipe.js javascript/custom/custom.js --no-mangle --no-dead-code -o css_js/scripts.js",
+		"js": "concat -o css_js/scripts.js javascript/vendor/jquery-3.1.1.min.js javascript/vendor/jquery.detect_swipe.js javascript/custom/custom.js",
 		"js-watch": "onchange \"javascript/**/*.js\" -v -- npm run js",
 		"watch": "concurrently --kill-others \"npm run css-watch\" \"npm run lint-watch\" \"npm run js-watch\""
 	},
