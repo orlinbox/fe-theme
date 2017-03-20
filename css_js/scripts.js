@@ -88,7 +88,7 @@ void 0!==c?null===c?void r.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b
   });
 }));
 
-$('body').on('swipeleft',  function(){ console.log('Swipe left'); });
-$('body').on('swiperight',  function(){ console.log('Swipe right'); });
+$('body').on('swipeleft', function(){ console.log('Swipe left'); });
+$('body').on('swiperight', function(){ console.log('Swipe right'); });
 
 console.log('FE theme');
