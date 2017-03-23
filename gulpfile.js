@@ -13,6 +13,7 @@ var js_files_lint = [
 ];
 
 var gulp = require('gulp');
+var plumber = require('gulp-plumber');
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
@@ -21,16 +22,26 @@ var gulp_grunt = require('gulp-grunt');
 require('gulp-grunt')(gulp);
 
 gulp.task('jshint', function() {
+	var onError = function(err) {
+		notify.onError({title: "JS"})(err);
+		this.emit('end');
+	};
 	return gulp.src(js_files_lint)
+		.pipe(plumber({errorHandler: onError}))
 		.pipe(jshint())
-		.pipe(jshint.reporter('default'));
+		.pipe(jshint.reporter('default'))
+		.pipe(jshint.reporter('fail'));
 });
 
 gulp.task('sass', function() {
+	var onError = function(err) {
+		notify.onError({title: "SASS"})(err);
+		this.emit('end');
+	};
 	return gulp.src('./sass/**/*.scss')
-		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-		.pipe(gulp.dest('./css_js'))
-		.pipe(notify('SASS done!'));
+		.pipe(plumber({errorHandler: onError}))
+		.pipe(sass({outputStyle: 'compressed'}))
+		.pipe(gulp.dest('./css_js'));
 });
 
 gulp.task('concat', function(cb) {
