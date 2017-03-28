@@ -39,7 +39,8 @@ gulp.task('sass', function() {
 	return gulp.src('./sass/**/*.scss')
 		.pipe(plumber({errorHandler: onError}))
 		.pipe(sass({outputStyle: 'compressed'}))
-		.pipe(gulp.dest('./css_js'));
+		.pipe(gulp.dest('./css_js'))
+		.pipe(gulp_css_count());
 });
 
 gulp.task('concat', function(cb) {
@@ -48,18 +49,12 @@ gulp.task('concat', function(cb) {
 		.pipe(gulp.dest('./css_js'));
 });
 
-gulp.task('csscount', function() {
-	return gulp.src('./css_js/**/*.css')
-		.pipe(gulp_css_count());
-});
-
 gulp.task('watch', function() {
 	gulp.watch('./sass/**/*.scss', ['sass']);
 	gulp.watch(js_files_lint, ['jshint']);
 	gulp.watch(js_files_concat, ['concat']);
-	gulp.watch('./css_js/**/*.css', ['csscount']);
 });
 
 gulp.task('default', function() {
-	gulp.start('sass', 'jshint', 'concat', 'csscount');
+	gulp.start('sass', 'jshint', 'concat');
 });
