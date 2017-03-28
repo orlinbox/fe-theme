@@ -10,9 +10,7 @@
 		"gulp-jshint": "^2.0.4",
 		"gulp-concat": "^2.6.1",
 		"gulp-notify": "^3.0.0",
-		"gulp-grunt": "^0.5.5",
-		"grunt": "^1.0.1",
-		"grunt-css-count": "^0.3.2"
+		"gulp-css-count": "^0.1.0"
 	},
 	"repository": {
 		"type": "git",

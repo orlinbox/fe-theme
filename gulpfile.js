@@ -8,18 +8,16 @@ var js_files_concat = [
 // Define JavaScript files for lint
 var js_files_lint = [
 	'./gulpfile.js',
-	'./Gruntfile.js',
 	'javascript/custom/**/*.js',
 ];
 
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
-var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
+var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
 var notify = require("gulp-notify");
-var gulp_grunt = require('gulp-grunt');
-require('gulp-grunt')(gulp);
+var gulp_css_count = require('gulp-css-count');
 
 gulp.task('jshint', function() {
 	var onError = function(err) {
@@ -50,13 +48,18 @@ gulp.task('concat', function(cb) {
 		.pipe(gulp.dest('./css_js'));
 });
 
+gulp.task('csscount', function() {
+	return gulp.src('./css_js/**/*.css')
+		.pipe(gulp_css_count());
+});
+
 gulp.task('watch', function() {
 	gulp.watch('./sass/**/*.scss', ['sass']);
 	gulp.watch(js_files_lint, ['jshint']);
 	gulp.watch(js_files_concat, ['concat']);
-	gulp.watch('./css_js/*.css', ['grunt-csscount']);
+	gulp.watch('./css_js/**/*.css', ['csscount']);
 });
 
 gulp.task('default', function() {
-	gulp.start('jshint', 'sass', 'concat', 'grunt-csscount');
+	gulp.start('sass', 'jshint', 'concat', 'csscount');
 });

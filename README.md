@@ -11,7 +11,6 @@
 * node.js
 * npm
 * gulp 3.9.1
-* grunt 1.0.1 (for grunt-css-count)
 
 ## Startup guide
 
