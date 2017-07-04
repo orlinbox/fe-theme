@@ -1,6 +1,6 @@
 // Define JavaScript files for aggregation
 var js_files_concat = [
-	'javascript/vendor/jquery-3.1.1.min.js',
+	'javascript/vendor/jquery-3.2.1.min.js',
 	'javascript/vendor/jquery.detect_swipe.js',
 	'javascript/custom/custom.js',
 ];

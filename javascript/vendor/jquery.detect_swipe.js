@@ -1,5 +1,5 @@
-/*!
- * jquery.detectSwipe v2.1.3
+/**
+ * jquery.detectSwipe v2.1.4
  * jQuery Plugin to obtain touch gestures from iPhone, iPod Touch, iPad and Android
  * http://github.com/marcandre/detect_swipe
  * Based on touchwipe by Andreas Waltl, netCU Internetagentur (http://www.netcu.de)
@@ -19,7 +19,7 @@
 }(function($) {
 
   $.detectSwipe = {
-    version: '2.1.2',
+    version: '2.1.4',
     enabled: 'ontouchstart' in document.documentElement,
     preventDefault: true,
     threshold: 20
@@ -43,10 +43,11 @@
       var dx = startX - x;
       var dy = startY - y;
       var dir;
-      if(Math.abs(dx) >= $.detectSwipe.threshold) {
+      var ratio = window.devicePixelRatio || 1;
+      if(Math.abs(dx) * ratio >= $.detectSwipe.threshold) {
         dir = dx > 0 ? 'left' : 'right'
       }
-      else if(Math.abs(dy) >= $.detectSwipe.threshold) {
+      else if(Math.abs(dy) * ratio >= $.detectSwipe.threshold) {
         dir = dy > 0 ? 'up' : 'down'
       }
       if(dir) {
