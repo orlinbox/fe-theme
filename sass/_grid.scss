@@ -34,7 +34,6 @@
 	}
 }
 
-
 .fe-sm-1 { @include grid-width(1) }
 .fe-sm-2 { @include grid-width(2) }
 .fe-sm-3 { @include grid-width(3) }
@@ -48,7 +47,7 @@
 .fe-sm-11 { @include grid-width(11) }
 .fe-sm-12 { @include grid-width(12) }
 
-@media screen and (min-width: ($screen-s + 1px)) {
+@include breakpoint(medium) {
 	.fe-md-1 { @include grid-width(1) }
 	.fe-md-2 { @include grid-width(2) }
 	.fe-md-3 { @include grid-width(3) }
@@ -63,7 +62,7 @@
 	.fe-md-12 { @include grid-width(12) }
 }
 
-@media screen and (min-width: $screen-m) {
+@include breakpoint(large) {
 	.fe-lg-1 { @include grid-width(1) }
 	.fe-lg-2 { @include grid-width(2) }
 	.fe-lg-3 { @include grid-width(3) }
