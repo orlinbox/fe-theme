@@ -43,18 +43,18 @@ textarea {
 input,
 textarea {
 	&::-webkit-input-placeholder {
-		 color: $body-color;
-		 opacity: $disabled-opacity !important;
+		color: $body-color;
+		opacity: $disabled-opacity !important;
 	}
 
 	&::-moz-placeholder {
-		 color: $body-color;
-		 opacity: $disabled-opacity !important;
+		color: $body-color;
+		opacity: $disabled-opacity !important;
 	}
 
 	&:-ms-input-placeholder {
-		 color: $body-color;
-		 opacity: $disabled-opacity !important;
+		color: $body-color;
+		opacity: $disabled-opacity !important;
 	}
 }
 
