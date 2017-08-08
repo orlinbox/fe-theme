@@ -9,6 +9,7 @@
 		"jshint": "^2.9.4",
 		"gulp-jshint": "^2.0.4",
 		"gulp-concat": "^2.6.1",
+		"gulp-minify": "^1.0.0",
 		"gulp-notify": "^3.0.0",
 		"gulp-css-count": "^0.1.2"
 	},

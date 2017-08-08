@@ -16,6 +16,7 @@ var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
+var minify = require('gulp-minify');
 var notify = require("gulp-notify");
 var gulp_css_count = require('gulp-css-count');
 
@@ -46,6 +47,14 @@ gulp.task('sass', function() {
 gulp.task('concat', function(cb) {
 	return gulp.src(js_files_concat)
 		.pipe(concat({path: 'scripts.js'}))
+		.pipe(minify({
+				ext:{
+						src: '-debug.js',
+						min: '.js'
+				},
+				preserveComments: 'some',
+				mangle: false
+		}))
 		.pipe(gulp.dest('./css_js'));
 });
 
