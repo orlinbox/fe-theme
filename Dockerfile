@@ -9,4 +9,4 @@ WORKDIR /root/work
 
 # docker build -t nodejs8bootstrap .
 # make sure the next path match -> local:container
-# docker run -it -v ~/repo/fe-theme:/root/work nodejs8
+# docker run -it -P -v ~/repo/fe-theme:/root/work nodejs8bootstrap
