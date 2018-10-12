@@ -1,14 +1,15 @@
+/* Custom styles ------------------------------------------------------------ */
+
+@import "custom/styles";
+
+/* Bootstrap ---------------------------------------------------------------- */
+
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
-/* add more colors here */
-$theme-colors: (
-  "custom": pink
-);
 
 @import "bootstrap/functions";
 @import "bootstrap/variables";
@@ -49,3 +50,11 @@ $theme-colors: (
 @import "bootstrap/carousel";
 @import "bootstrap/utilities";
 @import "bootstrap/print";
+
+/* Fontawesome -------------------------------------------------------------- */
+
+$fa-font-path: "../webfonts";
+@import "fontawesome/fontawesome.scss";
+/* @import "fontawesome/regular.scss"; (not free) */
+@import "fontawesome/solid.scss";
+@import "fontawesome/brands.scss";

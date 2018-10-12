@@ -1,0 +1,35 @@
+/* Custom styles ------------------------------------------------------------ */
+
+/* Add more colors to bootstrap --------------------------------------------- */
+$theme-colors: (
+  "custom": violet
+);
+
+$container-max-widths: (
+  sm: 1110px,
+  md: 1120px,
+  lg: 1130px,
+  xl: 1140px
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+/* Change some settgins in bootsrap ----------------------------------------- */
+
+$spacer: 0.5rem;
+$grid-gutter-width: 1.5rem;
+$enable-rounded: false;
+
+$body-bg: #ccc;
+$body-color: #333;
+$primary: olive;
+
+/* includes ----------------------------------------------------------------- */
+
+@import "components/empty";
