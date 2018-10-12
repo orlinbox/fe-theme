@@ -1,4 +1,4 @@
-# FE Theme - Bootstrap + Fontawesome
+# FE Theme: Bootstrap + Fontawesome
 * version: 1.0
 
 ## Browser support
@@ -7,7 +7,6 @@
 
 ## Current software requirements
 
-* git
 * node.js
 * npm
 * gulp 4
