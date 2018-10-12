@@ -1,0 +1,23 @@
+{
+	"name": "orl-fe-theme-bootstrap",
+	"version": "1.0.0",
+	"description": "FE theme",
+	"dependencies": {
+		"gulp": "^4.0.0",
+		"gulp-plumber": "^1.2.0",
+		"gulp-sass": "^4.0.1",
+		"gulp-sourcemaps": "^2.6.4",
+		"jshint": "^2.9.6",
+		"gulp-jshint": "^2.1.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-filesize": "^0.0.6",
+		"gulp-notify": "^3.2.0",
+		"gulp-css-count": "^0.1.2",
+		"gulp-uglify": "^3.0.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/orlinbox/fe-theme.git"
+	},
+	"license": "MIT"
+}
