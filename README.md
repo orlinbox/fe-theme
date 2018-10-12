@@ -17,7 +17,7 @@
 * Clone this repo in the desired directory
 
 ```
-$ git clone git@github.com:orlinbox/fe-theme.git fe
+$ git clone -b bootstrap git@github.com:orlinbox/fe-theme.git fe
 ```
 
 * Enter the directory
@@ -26,19 +26,13 @@ $ git clone git@github.com:orlinbox/fe-theme.git fe
 $ cd fe
 ```
 
-* Switch to bootstrap branch
-
-```
-$ git checkout bootstrap
-```
-
 * IMPORTANT: remove the local repo by removing the .git directory. You do NOT want to commit to this repo.
 
 ```
 $ rm -rf .git
 ```
 
-* Install Gulp related stuff as a super user. You might need to change "sudo" according to your OS.
+* Install Gulp related stuff as a super user. You might need to remove "sudo" according to your OS.
 
 ```
 $ sudo npm install
