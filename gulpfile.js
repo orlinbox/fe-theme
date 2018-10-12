@@ -65,9 +65,9 @@ function styles() {
 	var onError = function(err) { notify.onError({title: "SASS"})(err); this.emit('end'); };
 	return gulp.src(paths.styles.src)
 		.pipe(plumber({errorHandler: onError}))
-  	.pipe(sourcemaps.init())
+		.pipe(sourcemaps.init())
 		.pipe(sass({outputStyle: 'compressed'})) /* compressed / expanded */
-	  .pipe(sourcemaps.write('./'))
+		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(paths.styles.dest));
 }
 
@@ -84,11 +84,7 @@ function scriptsVendor() {
 		.pipe(concat({path: file}))
 		.pipe(uglify({output: {comments: /^!|@preserve|@license|@cc_on/i}, mangle: false})) /* comment this line to skip minification */
 		.pipe(gulp.dest(paths.scripts.dest))
-		.on('end', function() {
-			var path = paths.scripts.dest + 'vendor.js';
-			var stats = fs.statSync(path);
-			console.log('\n' + color.cyan(path) + ' ' +  color.yellow((stats.size/1000).toFixed(2) +' kB'));
-		});
+		.on('end', function() { logInfo(file); });
 }
 
 function scriptsBootstrap() {
@@ -97,11 +93,7 @@ function scriptsBootstrap() {
 		.pipe(concat({path: file}))
 		.pipe(uglify({output: {comments: /^!|@preserve|@license|@cc_on/i}, mangle: false})) /* comment this line to skip minification */
 		.pipe(gulp.dest(paths.scripts.dest))
-		.on('end', function() {
-			var path = paths.scripts.dest + file;
-			var stats = fs.statSync(path);
-			console.log('\n' + color.cyan(path) + ' ' +  color.yellow((stats.size/1000).toFixed(2) +' kB'));
-		});
+		.on('end', function() { logInfo(file); });
 }
 
 function scriptsCustom() {
@@ -110,11 +102,7 @@ function scriptsCustom() {
 		.pipe(concat({path: file}))
 		.pipe(uglify({output: {comments: /^!|@preserve|@license|@cc_on/i}, mangle: false})) /* comment this line to skip minification */
 		.pipe(gulp.dest(paths.scripts.dest))
-		.on('end', function() {
-			var path = paths.scripts.dest + file;
-			var stats = fs.statSync(path);
-			console.log('\n' + color.cyan(path) + ' ' +  color.yellow((stats.size/1000).toFixed(2) +' kB'));
-		});
+		.on('end', function() { logInfo(file); });
 }
 
 function scriptsLint() {
@@ -127,6 +115,12 @@ function scriptsLint() {
 }
 
 /* Helpers */
+
+function logInfo(file) {
+	var path = paths.scripts.dest + file;
+	var stats = fs.statSync(path);
+	console.log('\n' + color.cyan(path) + ' ' +  color.yellow((stats.size/1000).toFixed(2) +' kB'));
+}
 
 var scripts = gulp.parallel(scriptsVendor, scriptsBootstrap, scriptsCustom);
 var buildStyles = gulp.series(styles, stylesCount);
