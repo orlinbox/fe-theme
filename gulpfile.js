@@ -47,13 +47,14 @@ var paths = {
 
 /* Includes ----------------------------------------------------------------- */
 
+var fs = require('fs');
 var gulp = require('gulp');
+var color = require('colors');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
-var size = require('gulp-filesize');
 var notify = require("gulp-notify");
 var gulp_css_count = require('gulp-css-count');
 var uglify = require('gulp-uglify');
@@ -78,27 +79,42 @@ function stylesCount() {
 /* Scripts */
 
 function scriptsVendor() {
+	var file = 'vendor.js';
 	return gulp.src(paths.scripts.srcVendor)
-		.pipe(concat({path: 'vendor.js'}))
+		.pipe(concat({path: file}))
 		.pipe(uglify({output: {comments: /^!|@preserve|@license|@cc_on/i}, mangle: false})) /* comment this line to skip minification */
 		.pipe(gulp.dest(paths.scripts.dest))
-		.pipe(size());
+		.on('end', function() {
+			var path = paths.scripts.dest + 'vendor.js';
+			var stats = fs.statSync(path);
+			console.log('\n' + color.cyan(path) + ' ' +  color.yellow((stats.size/1000).toFixed(2) +' kB'));
+		});
 }
 
 function scriptsBootstrap() {
+	var file = 'bootstrap.js';
 	return gulp.src(paths.scripts.srcBootstrap)
-		.pipe(concat({path: 'bootstrap.js'}))
+		.pipe(concat({path: file}))
 		.pipe(uglify({output: {comments: /^!|@preserve|@license|@cc_on/i}, mangle: false})) /* comment this line to skip minification */
 		.pipe(gulp.dest(paths.scripts.dest))
-		.pipe(size());
+		.on('end', function() {
+			var path = paths.scripts.dest + file;
+			var stats = fs.statSync(path);
+			console.log('\n' + color.cyan(path) + ' ' +  color.yellow((stats.size/1000).toFixed(2) +' kB'));
+		});
 }
 
 function scriptsCustom() {
+	var file = 'custom.js';
 	return gulp.src(paths.scripts.srcCustom)
-		.pipe(concat({path: 'custom.js'}))
+		.pipe(concat({path: file}))
 		.pipe(uglify({output: {comments: /^!|@preserve|@license|@cc_on/i}, mangle: false})) /* comment this line to skip minification */
 		.pipe(gulp.dest(paths.scripts.dest))
-		.pipe(size());
+		.on('end', function() {
+			var path = paths.scripts.dest + file;
+			var stats = fs.statSync(path);
+			console.log('\n' + color.cyan(path) + ' ' +  color.yellow((stats.size/1000).toFixed(2) +' kB'));
+		});
 }
 
 function scriptsLint() {
