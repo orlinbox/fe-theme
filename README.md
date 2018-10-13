@@ -1,4 +1,4 @@
-# FE Theme: Bootstrap + Fontawesome
+# FE Theme: Bootstrap + Icons
 * version: 1.0
 
 ## Browser support
