@@ -29,6 +29,9 @@ $grid-breakpoints: (
 $spacer: 0.5rem;
 $grid-gutter-width: 1.5rem;
 /* $enable-rounded: false; */
+$border-radius: 1rem;
+$border-radius-lg: $border-radius; 
+$border-radius-sm: $border-radius;
 
 $body-bg: #eed;
 $body-color: #333;
