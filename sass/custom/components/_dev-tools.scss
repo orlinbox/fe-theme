@@ -1,0 +1,19 @@
+/* Dotted outlines */
+
+* {
+  position: relative;
+  outline: 2px dotted rgba(0,0,0,0.1);
+  outline-offset: -3px;
+
+  &:after {
+    position: absolute;
+    content: 'EL';
+    padding: 3px;
+    left: 0;
+    top: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.1);
+    font-weight: normal;
+    font-size: 9px;
+  }
+}
