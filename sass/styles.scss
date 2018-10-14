@@ -1,4 +1,8 @@
-/* Custom styles ------------------------------------------------------------ */
+/* Custom styles ---------------------------------------------------------------
+
+Put your FE work there!
+
+*/
 
 @import "custom/styles";
 
@@ -54,6 +58,7 @@
 /* Fontawesome -------------------------------------------------------------- */
 
 $fa-font-path: "../icons_fonts";
+
 @import "fontawesome/fontawesome.scss";
 /* @import "fontawesome/regular.scss"; (not free) */
 @import "fontawesome/solid.scss";

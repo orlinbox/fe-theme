@@ -1,4 +1,8 @@
-/* Custom styles ------------------------------------------------------------ */
+/* Custom styles ---------------------------------------------------------------
+
+Put your FE work here!
+
+*/
 
 /* Add more colors to bootstrap --------------------------------------------- */
 $theme-colors: (
@@ -24,12 +28,12 @@ $grid-breakpoints: (
 
 $spacer: 0.5rem;
 $grid-gutter-width: 1.5rem;
-$enable-rounded: false;
+/* $enable-rounded: false; */
 
-$body-bg: #ccc;
+$body-bg: #eed;
 $body-color: #333;
 $primary: olive;
 
-/* includes ----------------------------------------------------------------- */
+/* Components --------------------------------------------------------------- */
 
-@import "components/empty";
+@import "components/dev-tools";
