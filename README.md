@@ -17,32 +17,32 @@
 * Clone this repo in the desired directory
 
 ```
-**$** git clone -b bootstrap https://github.com/orlinbox/fe-theme.git fe
+$ git clone -b bootstrap https://github.com/orlinbox/fe-theme.git fe
 ```
 
 * Enter the directory.
 
 ```
-**$** cd fe
+$ cd fe
 ```
 
 * Delete the .git directory for this repo!
 
 ```
-**(unix)$** rm -rf .git
-**(windows)$** rd /s /q .git
+(UNIX)$ rm -rf .git
+(Windows)$ rd /s /q .git
 ```
 
 * Install Gulp related stuff.
 
 ```
-**$** npm install
+$ npm install
 ```
 
 * Start work
 
 ```
-**$** gulp watch
+$ gulp watch
 ```
 
 ## Tips
@@ -51,7 +51,7 @@
 * Compare (diff) a single line in git (suitable for compressed CSS)
 
 ```
-**$** git diff --word-diff
+$ git diff --word-diff
 ```
 
 * If you plan to use SVGs in the project, you should consider using [SVGO](https://github.com/svg/svgo)
