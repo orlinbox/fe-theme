@@ -1,1 +1,2 @@
-$("body").on("swipeleft",function(){console.log("Swipe left")}),$("body").on("swiperight",function(){console.log("Swipe right")}),console.log("FE theme");
+"use strict";$("body").on("swipeleft",function(){console.log("Swipe left")}),$("body").on("swiperight",function(){console.log("Swipe right")}),console.log("FE theme");
+//# sourceMappingURL=custom.js.map

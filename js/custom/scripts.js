@@ -1,4 +1,4 @@
-$('body').on('swipeleft', function(){ console.log('Swipe left'); });
-$('body').on('swiperight', function(){ console.log('Swipe right'); });
+$('body').on('swipeleft', () => { console.log('Swipe left'); });
+$('body').on('swiperight', () => { console.log('Swipe right'); });
 
 console.log('FE theme');

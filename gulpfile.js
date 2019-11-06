@@ -9,7 +9,7 @@ var paths = {
   },
   scripts: {
     srcVendor: [
-      'js/vendor/jquery-3.3.1.slim.min.js',
+      'js/vendor/jquery-3.4.1.min.js',
       'js/vendor/popper-1.14.3.min.js',
       'js/vendor/jquery.detect_swipe_final.js',
     ],
@@ -53,12 +53,14 @@ var gulp = require('gulp');
 var color = require('colors');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
+var babel = require('gulp-babel');
+var minify = require("gulp-babel-minify");
 var sourcemaps = require('gulp-sourcemaps');
-var jshint = require('gulp-jshint');
+var eslint = require('gulp-eslint');
 var concat = require('gulp-concat');
 var notify = require("gulp-notify");
 var gulp_css_count = require('gulp-css-count');
-var uglify = require('gulp-uglify');
+
 
 /* Styles ------------------------------------------------------------------- */
 
@@ -83,7 +85,6 @@ function scriptsVendor() {
   var file = 'vendor.js';
   return gulp.src(paths.scripts.srcVendor)
     .pipe(concat({path: file}))
-    .pipe(uglify({output: {comments: /^!|@preserve|@license|@cc_on/i}, mangle: false})) /* comment this line to skip minification */
     .pipe(gulp.dest(paths.scripts.dest))
     .on('end', function() { logInfo(file); });
 }
@@ -92,7 +93,6 @@ function scriptsBootstrap() {
   var file = 'bootstrap.js';
   return gulp.src(paths.scripts.srcBootstrap)
     .pipe(concat({path: file}))
-    .pipe(uglify({output: {comments: /^!|@preserve|@license|@cc_on/i}, mangle: false})) /* comment this line to skip minification */
     .pipe(gulp.dest(paths.scripts.dest))
     .on('end', function() { logInfo(file); });
 }
@@ -100,8 +100,17 @@ function scriptsBootstrap() {
 function scriptsCustom() {
   var file = 'custom.js';
   return gulp.src(paths.scripts.srcCustom)
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
     .pipe(concat({path: file}))
-    .pipe(uglify({output: {comments: /^!|@preserve|@license|@cc_on/i}, mangle: false})) /* comment this line to skip minification */
+    .pipe(minify({
+      mangle: {
+        keepClassName: true
+      }
+    }))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.scripts.dest))
     .on('end', function() { logInfo(file); });
 }
@@ -110,9 +119,9 @@ function scriptsLint() {
   var onError = function(err) { notify.onError({title: "JS"})(err); this.emit('end'); };
   return gulp.src(paths.scripts.lint)
     .pipe(plumber({errorHandler: onError}))
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(jshint.reporter('fail'));
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 }
 
 /* Helpers */
@@ -134,6 +143,7 @@ function watchNow() {
   gulp.watch(paths.scripts.watchVendor, scriptsVendor);
   gulp.watch(paths.scripts.watchBootstrap, scriptsBootstrap);
   gulp.watch(paths.scripts.watchCustom, scriptsCustom);
+  gulp.watch(paths.scripts.watchCustom, scriptsLint);
 }
 
 gulp.task('watch', gulp.parallel(build, watchNow));

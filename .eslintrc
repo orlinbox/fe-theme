@@ -1,0 +1,14 @@
+{
+  "extends": "airbnb",
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  },
+  "rules": {
+    "no-console": "off",
+  },
+  "globals": {
+    "$": true
+  }
+}
