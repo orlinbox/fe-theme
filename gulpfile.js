@@ -1,6 +1,6 @@
 /* Files -------------------------------------------------------------------- */
 
-var paths = {
+const paths = {
   styles: {
     src: 'sass/styles.scss',
     watch: 'sass/**/*.scss',
@@ -10,8 +10,8 @@ var paths = {
   scripts: {
     srcVendor: [
       'js/vendor/jquery-3.4.1.min.js',
+      'js/vendor/jquery.detectSwipe-2.1.4.min.js',
       'js/vendor/popper-1.14.3.min.js',
-      'js/vendor/jquery.detect_swipe_final.js',
     ],
     srcBootstrap: [
       /* comment out the unnecessary ones */
@@ -42,101 +42,103 @@ var paths = {
       'js/custom/**/*.js',
     ],
     dest: 'compiled/',
-  }
+  },
 };
 
 /* Includes ----------------------------------------------------------------- */
 
-var fs = require('fs');
-var respath = require('path');
-var gulp = require('gulp');
-var color = require('colors');
-var plumber = require('gulp-plumber');
-var sass = require('gulp-sass');
-var babel = require('gulp-babel');
-var minify = require("gulp-babel-minify");
-var sourcemaps = require('gulp-sourcemaps');
-var eslint = require('gulp-eslint');
-var concat = require('gulp-concat');
-var notify = require("gulp-notify");
-var gulp_css_count = require('gulp-css-count');
+const fs = require('fs');
+const respath = require('path');
+const gulp = require('gulp');
+const color = require('colors');
+const plumber = require('gulp-plumber');
+const sass = require('gulp-sass');
+const babel = require('gulp-babel');
+const minify = require('gulp-babel-minify');
+const sourceMaps = require('gulp-sourcemaps');
+const eslint = require('gulp-eslint');
+const concat = require('gulp-concat');
+const notify = require('gulp-notify');
+const gulpCssCount = require('gulp-css-count');
+const uglify = require('gulp-uglify');
 
+function logInfo(file) {
+  const path = paths.scripts.dest + file;
+  const absolutePath = color.cyan(respath.resolve(path));
+  const stats = color.yellow((fs.statSync(path).size / 1000).toFixed(2));
+  const measure = color.yellow('kB');
+  console.log(`\n${absolutePath} ${stats} ${measure}`);
+}
 
 /* Styles ------------------------------------------------------------------- */
 
 function styles() {
-  var onError = function(err) { notify.onError({title: "SASS"})(err); this.emit('end'); };
+  const onError = (err) => { notify.onError({ title: 'SASS' })(err); this.emit('end'); };
   return gulp.src(paths.styles.src)
-    .pipe(plumber({errorHandler: onError}))
-    .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'compressed'})) /* compressed / expanded */
-    .pipe(sourcemaps.write('./'))
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(sourceMaps.init())
+    .pipe(sass({ outputStyle: 'compressed' })) /* compressed / expanded */
+    .pipe(sourceMaps.write('./'))
     .pipe(gulp.dest(paths.styles.dest));
 }
 
 function stylesCount() {
   return gulp.src(paths.styles.count)
-    .pipe(gulp_css_count());
+    .pipe(gulpCssCount());
 }
 
-/* Scripts */
+/* Scripts ------------------------------------------------------------------ */
 
 function scriptsVendor() {
-  var file = 'vendor.js';
+  const file = 'vendor.js';
   return gulp.src(paths.scripts.srcVendor)
-    .pipe(concat({path: file}))
+    .pipe(concat({ path: file }))
     .pipe(gulp.dest(paths.scripts.dest))
-    .on('end', function() { logInfo(file); });
+    .on('end', () => { logInfo(file); });
 }
 
 function scriptsBootstrap() {
-  var file = 'bootstrap.js';
+  const file = 'bootstrap.js';
   return gulp.src(paths.scripts.srcBootstrap)
-    .pipe(concat({path: file}))
+    .pipe(concat({ path: file }))
+    .pipe(uglify({ output: { comments: /^!|@preserve|@license|@cc_on/i }, mangle: false })) /* comment this line to skip minification */
     .pipe(gulp.dest(paths.scripts.dest))
-    .on('end', function() { logInfo(file); });
+    .on('end', () => { logInfo(file); });
 }
 
 function scriptsCustom() {
-  var file = 'custom.js';
+  const file = 'custom.js';
   return gulp.src(paths.scripts.srcCustom)
-    .pipe(sourcemaps.init())
+    .pipe(sourceMaps.init())
     .pipe(babel({
-        presets: ['@babel/env']
+      presets: ['@babel/env'],
     }))
-    .pipe(concat({path: file}))
+    .pipe(concat({ path: file }))
     .pipe(minify({
       mangle: {
-        keepClassName: true
-      }
+        keepClassName: true,
+      },
     }))
-    .pipe(sourcemaps.write('./'))
+    .pipe(sourceMaps.write('./'))
     .pipe(gulp.dest(paths.scripts.dest))
-    .on('end', function() { logInfo(file); });
+    .on('end', () => { logInfo(file); });
 }
 
 function scriptsLint() {
-  var onError = function(err) { notify.onError({title: "JS"})(err); this.emit('end'); };
+  const onError = (err) => { notify.onError({ title: 'JS' })(err); this.emit('end'); };
   return gulp.src(paths.scripts.lint)
-    .pipe(plumber({errorHandler: onError}))
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
 }
 
-/* Helpers */
+/* Helpers ------------------------------------------------------------------ */
 
-function logInfo(file) {
-  var path = paths.scripts.dest + file;
-  var absolutePath = respath.resolve(path);
-  var stats = fs.statSync(path);
-  console.log('\n' + color.cyan(absolutePath) + ' ' +  color.yellow((stats.size/1000).toFixed(2) +' kB'));
-}
-
-var scripts = gulp.parallel(scriptsVendor, scriptsBootstrap, scriptsCustom);
-var buildStyles = gulp.series(styles, stylesCount);
-var buildScripts = gulp.series(scriptsLint, scripts);
-var build = gulp.parallel(buildScripts, buildStyles);
+const scripts = gulp.parallel(scriptsVendor, scriptsBootstrap, scriptsCustom);
+const buildStyles = gulp.series(styles, stylesCount);
+const buildScripts = gulp.series(scriptsLint, scripts);
+const build = gulp.parallel(buildScripts, buildStyles);
 
 function watchNow() {
   gulp.watch(paths.styles.watch, buildStyles);

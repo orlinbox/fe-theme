@@ -1,5 +1,5 @@
-# FE Theme: Bootstrap + Icons
-* version: 1.0
+# FE Theme: Bootstrap + Icons with Babel
+* version: 2.0
 
 ## Browser support
 
@@ -17,7 +17,7 @@
 * Clone this repo in the desired directory
 
 ```
-$ git clone -b bootstrap https://github.com/orlinbox/fe-theme.git fe
+$ git clone -b babel https://github.com/orlinbox/fe-theme.git fe
 ```
 
 * Enter the directory.
