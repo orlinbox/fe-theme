@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"><!--[1]-->
+<head>
+  <meta charset="utf-8"><!--[2]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!--[3]-->
+  <title>Web content accessibility guidelines - Template with basic examples</title><!--[4]-->
+</head>
+<body>
+
+  <header aria-label="Global header area"><!--[6]-->
+
+    <a href="#content">Skip to content</a><!--[5]-->
+
+    <nav aria-label="Main navigation">
+      <ul role="menubar" aria-label="Main menu"><!--[7],[6]-->
+        <li role="none"><!--[12]-->
+          <button id="menu1" role="menuitem" aria-haspopup="true" aria-expanded="false">Accessibility standards</button><!--[11],[8],[9]-->
+          <ul id="submenu1" role="menu" aria-labelledby="menu1" hidden><!--[10],[6],[13]-->
+            <li role="none"><!--[12]-->
+              <a role="menuitem" href="#SUBMENU_LINK_1">WCAG</a><!--[11]-->
+            </li>
+            <li role="none"><!--[12]-->
+              <a role="menuitem" href="#SUBMENU_LINK_2">Revised Section 508</a><!--[11]-->
+            </li>
+            <li role="none"><!--[12]-->
+              <a role="menuitem" href="#SUBMENU_LINK_3">EN 301 549</a><!--[11]-->
+            </li>
+          </ul>
+        </li>
+        <li role="none"><!--[12]-->
+          <a role="menuitem" href="#MENU_LINK_2">Ways to achieve accessibility</a><!--[11]-->
+        </li>
+        <li role="none"><!--[12]-->
+          <a role="menuitem" href="#MENU_LINK_3">Additional information on accessibility</a><!--[11]-->
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main id="content" aria-label="Page content"><!--[5],[6]-->
+
+    <article aria-labelledby="title1"><!--[6]-->
+      <h1 id="title1">List of code notes</h1>
+      <ul aria-labelledby="title1"><!--[6]-->
+        <li>[1] html tag lang attribute specifies a document language.</li>
+        <li>[2] charset tag specifies a character set.</li>
+        <li>[3] viewport tag improves mobile device accessibility.</li>
+        <li>[4] meaningful and unique page title is required.</li>
+        <li>[5] skip to content anchor (visible only on focus).</li>
+        <li>[6] aria-label and aria-labelledby used to identify the sections of the web page.</li>
+        <li>[7] role="menubar" defines horizontal menu</li>
+        <li>[8] aria-haspopup="true" defines a submenu for the element exist</li>
+        <li>[9] aria-expanded="false" defines a state of the element (closed) and have to be changed with JS when needed</li>
+        <li>[10] role="menu" defines a menu</li>
+        <li>[11] role="menuitem" defines an item from a menu</li>
+        <li>[12] role="none" defines that native role will be discarded</li>
+        <li>[13] hidden attribute makes the inner links unfocusable</li>
+      </ul>
+    </article>
+
+    <article aria-labelledby="title2"><!--[6]-->
+      <h2 id="title2">List of design notes</h2>
+      <ul aria-labelledby="title2"><!--[6]-->
+        <li>Fonts are large and readable.</li>
+        <li>There is enough contrast.</li>
+        <li>Presented information is easy to comprehend.</li>
+      </ul>
+    </article>
+
+    <aside aria-labelledby="title3"><!--[6]-->
+      <h3 id="title3">List of websites related to accessibility coding</h3>
+      <ul aria-labelledby="title3"><!--[6]-->
+        <li><a href="https://www.w3.org/WAI/tips/developing/">https://www.w3.org/WAI/tips/developing/</a></li>
+        <li>https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML</li>
+        <li>https://www.accessibility-developer-guide.com</li>
+        <li>https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer aria-label="Global footer area"><!--[6]-->
+
+    Credits
+
+  </footer>
+
+</body>
