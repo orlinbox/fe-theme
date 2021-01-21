@@ -14,7 +14,7 @@
     <nav aria-label="Main navigation">
       <ul role="menubar" aria-label="Main menu"><!--[7],[6]-->
         <li role="none"><!--[12]-->
-          <button id="menu1" role="menuitem" aria-haspopup="true" aria-expanded="false">Accessibility standards</button><!--[11],[8],[9]-->
+          <a id="menu1" role="menuitem" aria-haspopup="true" aria-expanded="false" href="#MENU_LINK_1">Accessibility standards</a><!--[11],[8],[9]-->
           <ul id="submenu1" role="menu" aria-labelledby="menu1" hidden><!--[10],[6],[13]-->
             <li role="none"><!--[12]-->
               <a role="menuitem" href="#SUBMENU_LINK_1">WCAG</a><!--[11]-->
@@ -41,7 +41,7 @@
   <main id="content" aria-label="Page content"><!--[5],[6]-->
 
     <article aria-labelledby="title1"><!--[6]-->
-      <h1 id="title1">List of code notes</h1>
+      <h1 id="title1">Code notes and additional accessibility information</h1>
       <ul aria-labelledby="title1"><!--[6]-->
         <li>[1] html tag lang attribute specifies a document language.</li>
         <li>[2] charset tag specifies a character set.</li>
@@ -56,34 +56,56 @@
         <li>[11] role="menuitem" defines an item from a menu</li>
         <li>[12] role="none" defines that native role will be discarded</li>
         <li>[13] hidden attribute makes the inner links unfocusable</li>
-      </ul>
-    </article>
 
-    <article aria-labelledby="title2"><!--[6]-->
-      <h2 id="title2">List of design notes</h2>
-      <ul aria-labelledby="title2"><!--[6]-->
         <li>Fonts are large and readable.</li>
         <li>There is enough contrast.</li>
-        <li>Presented information is easy to comprehend.</li>
+        <li>Color is not the only indicator to convey meaning</li>
+        <li>Text wraps appropriately when resized to 200%</li>
+        <li>Presented information is easy to understand</li>
+        <li>Error handling (forms, etc.) is good enough, text is available</li>
+        <li>After high contrast is activated, everything is visible and interactable</li>
       </ul>
     </article>
 
-    <aside aria-labelledby="title3"><!--[6]-->
+    <article aria-labelledby="title2">
+      <h2 id="title2">Common web page elements</h2>
+
+      image
+
+      button
+
+      form
+
+      table
+
+    </article>
+
+    <aside aria-labelledby="title3">
       <h3 id="title3">List of websites related to accessibility coding</h3>
-      <ul aria-labelledby="title3"><!--[6]-->
-        <li><a href="https://www.w3.org/WAI/tips/developing/">https://www.w3.org/WAI/tips/developing/</a></li>
-        <li>https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML</li>
-        <li>https://www.accessibility-developer-guide.com</li>
-        <li>https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility</li>
+      <ul aria-labelledby="title3">
+        <li><a href="https://www.w3.org/WAI/tips/developing/">Developing for Web Accessibility</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML">HTML: A good basis for accessibility</a></li>
+        <li><a href="https://www.accessibility-developer-guide.com">Accessibility Developer Guide</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility">Handling common accessibility problems</a></li>
       </ul>
     </aside>
 
   </main>
 
-  <footer aria-label="Global footer area"><!--[6]-->
-
-    Credits
-
+  <footer aria-label="Global footer area">
+    <p>This example HTML was created in 2021. It's purpose is to help the developers with writing accessibility compliant code.</p>
   </footer>
+
+  <script>
+    // Useful JS: allow to activate a fake button (div element) with keyboard. The div will also will need tabindex="0".
+    document.onkeydown = function(e) {
+      // Enter key
+      if (e.keyCode === 13) {
+        if (document.activeElement.tagName === 'DIV') {
+          document.activeElement.click();
+        }
+      }
+    };
+  </script>
 
 </body>

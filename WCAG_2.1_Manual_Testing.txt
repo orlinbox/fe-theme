@@ -1,0 +1,136 @@
+Inspect visual content
+  Check labeling, link names, and page titles
+    All form fields and controls have visible text labels
+    Page title is unique within the application and generally matches the level one heading
+    Link names make sense on their own
+    Links with the same name must point to the same target
+  Check use of color, contrast, and images of text
+    Color is not the only indicator to convey meaning
+    Links not underlined are distinguishable when viewed in gray scale
+    There is clear contrast between all text and its background
+    All parts of any gradient background have clear contrast with their text
+    Confirm images of text pass testing for alternative text and contrast
+    There is clear contrast between components and the background
+    All parts of meaningful graphics have a contrast of 3:1 against adjacent colors
+  Read text for clarity; check for foreign and sensory words
+    Non-sensory words are provided for sensory-worded instructions
+    Headings and labels are clear and concise
+    Instructions are always provided for required user input, expected formats, and keyboard interaction
+    Headings, labels, instructions, and foreign words are noted for later confirmation that they are also compatible with the screen reader
+  Check for audio, video, flashing, and auto-play
+    Any flashing content is below required thresholds
+    Any audio or video has a label describing the content
+    Any audio, video, or auto-playing content is noted for further testing
+    If no media listed above exists, the items below are not applicable
+  Note any curiosities
+    Dynamic and any potentially problematic components are noted for further testing with the screen reader
+    Technology-specific requirements and considerations are noted
+    Icons used for meaningful content are noted for high contrast testing
+
+Test without a keyboard
+  Check pointer hover
+    Any indication of pointer location does not negate state indicators, such as focus
+    Rollover and hover effects do not cause contrast failures
+    Content exposed via hover behaves predictably
+    Content exposed via hover is also keyboard operable
+  Check pointer operations
+    Pointer operations do not cause contrast failures
+    Pointer operations do not rely on multipoint or path-based gestures
+    Pointer operations can be aborted, undone, or reversed
+    Pointer interactions that alter content are noted for keyboard tests
+  Check motion operation
+    Applications do not prevent orientation changes
+    Applications do not rely on motion
+
+Test with a keyboard
+  Check tab or navigation order
+    Elements receive focus in an order that preserves meaning
+    No interactive elements are missed
+    Keyboard interaction and navigation is never trapped in a component
+    There is a visual indicator of focus at each tab stop
+  Check focus indicator
+    Initial focus is evident
+    There is a visual indicator every time a key press/action changes focus
+    A focused item is differentiated from a selected item
+  Check component keyboard interaction
+    All actions in a widget can be performed with the keyboard
+    Items can be traversed in forward and reverse order
+    Standard keyboard interaction for a component is supported
+    Visual indicators of focus and state (where relevant) exist
+    Audio, video, and auto-playing content (players) are fully operable with keyboard
+    Audio and video contain appropriate controls to activate captions, audio descriptions, or text alternatives
+    Custom shortcuts are not accidentally triggered
+  Check bypass blocks, consistent navigation, and multiple ways
+    Users can skip to main content or move between sections of content
+    ARIA landmarks are consistently structured and labelled
+    No text falls outside a region (orphaned) for ARIA landmarks
+    There are multiple ways to navigate content
+    Navigation mechanisms repeated throughout occur in the same relative order or location
+
+Assess page transformation
+  Resize and re-space text
+    Text wraps appropriately when resized to 200%
+    When zoomed, scrollbars are present and offscreen content can be brought into view
+    Full content is available to the user through focus or activation when text is truncated
+    Content supports increasing the letter, word, paragraph and line spacing 
+  Reflow text
+    Content can be enlarged to 400% or equivalent
+    Horizontal scrollbars do not appear
+    No content or functionality is lost
+
+Confirm page interaction
+  Dynamic update triggers and effects
+    Context changes are only triggered when users activate a control
+    Context changes do not occur when users change their focus
+    Context changes do not occur when users input data
+    Context changes do not occur when users interact with a component
+    Content changes do not contribute to timing issues for a user
+  Maintaining user’s point of regard
+    Users return to the same relative position, or point of regard, when they return to a previous screen or page.
+  Error handling and instructions
+    Error handling and instructions are easily detected
+    Errors are described in text
+    If they are known, suggestions for correction are provided
+    Instructions are provided for specific formatting or values
+    Inputs that collect common information about the user are populated automatically (autofill)
+    Users have a chance to check, confirm, or reverse actions
+    There is another indicator if color is used to convey meaning
+  High contrast and OS settings
+    When platform high contrast is activated, the application adopts the high contrast theme
+    After high contrast is activated, focus indicators and component interaction remain visible via keyboard
+    After high contrast is activated, all images and icons that convey important information are visible or replaced by a text alternative
+    After high contrast is activated, pointer effects are still visible
+  Time limits
+    For each time limit that is set by the content, the user can turn off or adjust the time limit before encountering it, or the user is warned before time expires and allowed to extend it
+    If there are no means to turn off or extend time limits, confirm it is an allowable exception
+
+Test with a screen reader
+  Check meaningful sequence
+    Information with a specific order is available to the screen reader
+    When the screen reader deviates from visual order, the reading order does not alter its meaning
+  Verify ALTs, labelling, and foreign phrases
+    Images have meaningful and appropriate ALT text
+    Form field labels are clear and properly associated with the fields
+    The label text matches the output from the screen reader
+    Required form fields are announced
+    Headings are descriptive and at an appropriate hierarchy
+    Link names are descriptive
+    Foreign phrases are indicated or pronounced properly by the screen reader
+  Compare keyboard operation and output
+    Screen reader output is in sync with item in focus when navigating
+    Keyboard interaction continues to work while using the screen reader
+    Display of name, role, value, and state information matches screen reader output
+    Bypass blocks navigation works with the screen reader
+  Check page structure, tables, and headings
+    Table captions are properly associated with tables
+    Table row and column headers are available to the screen reader
+    Regions are appropriately structured and labeled
+    Page, dialog, and frame titles are unique and concise
+  Confirm content interaction works with the screen reader
+    Dynamic update triggers and effects work with the screen reader
+    User’s point of regard is properly handled and announced by the screen reader
+    Error handling and instructions, including programmatic identification of associated inputs, and required or invalid states, are exposed to the screen reader
+    Status messages appearing on screen are announced by the screen reader
+    Error messages and time limit notifications are properly announced by the screen reader
+
+
