@@ -41,7 +41,7 @@
   <main id="content" aria-label="Page content"><!--[5],[6]-->
 
     <article aria-labelledby="title1"><!--[6]-->
-      <h1 id="title1">Code notes and additional accessibility information</h1>
+      <h1 id="title1">Code notes and additional accessibility information</h1><!--[14]-->
       <ul aria-labelledby="title1"><!--[6]-->
         <li>[1] html tag lang attribute specifies a document language.</li>
         <li>[2] charset tag specifies a character set.</li>
@@ -56,28 +56,103 @@
         <li>[11] role="menuitem" defines an item from a menu</li>
         <li>[12] role="none" defines that native role will be discarded</li>
         <li>[13] hidden attribute makes the inner links unfocusable</li>
-
-        <li>Fonts are large and readable.</li>
+        <li>[14] single H1 tag on a page</li>
+        <li>[15] alt="" role="presentation" defines that the image is a decorative element</li>
+        <li>[16] title and aria-label attributes have to be the same otherwise the screen reader will read both of them</li>
+        <li>[17] role="alert" have to be dynamically added in order to announce the error immediately</li>
+        <li>[18] scope="col" specifies that the cell is a header for a column</li>
+      </ul>
+      <h2 id="subtitle">Important things related to the visual</h2>
+      <ul aria-labelledby="subtitle">
+        <li>Fonts are large enough and readable.</li>
         <li>There is enough contrast.</li>
-        <li>Color is not the only indicator to convey meaning</li>
-        <li>Text wraps appropriately when resized to 200%</li>
-        <li>Presented information is easy to understand</li>
+        <li>Color is not the only indicator to convey meaning.</li>
+        <li>Text wraps appropriately when resized to 200%.</li>
+        <li>Presented information is easy to understand.</li>
         <li>Error handling (forms, etc.) is good enough, text is available</li>
-        <li>After high contrast is activated, everything is visible and interactable</li>
+        <li>After high contrast is activated, everything is visible and interactable.</li>
       </ul>
     </article>
 
     <article aria-labelledby="title2">
-      <h2 id="title2">Common web page elements</h2>
+      <h2 id="title2">Common web page elements - image, button, form, table</h2>
 
-      image
+      <hr>
 
-      button
+      <img src="#IMAGE_URL" alt="Demo code image">
 
-      form
+      <img src="#DECORATIVE_IMAGE_URL" alt="" role="presentation"><!--[15]-->
 
-      table
+      <figure>
+        <img src="#IMAGE_URL" alt="Demo code image with additional caption">
+        <figcaption>
+          A demo image by <a href="#URL">someone</a>
+        </figcaption>
+      </figure>
 
+      <hr>
+
+      <button>Simple button</button>
+
+      <input type="button" value="Simple input button">
+
+      <button title="Icon button with label" aria-label="Icon button with label"><!--[16]-->
+        <svg width="20" height="20">
+          <circle cx="10" cy="10" r="8" fill="black"/>
+        </svg>
+      </button>
+
+      <hr>
+
+      <form>
+        <p role="alert">Your form could not be submitted because of validation errors.</p><!--[17]-->
+        <fieldset>
+          <legend>Personal information</legend>
+          <div>
+            <label for="name">Fill in your name:</label>
+            <input type="text" id="name">
+          </div>
+          <div>
+            <label for="age">Enter your age:</label>
+            <input type="text" id="age">
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Additional information</legend>
+          <label for="mood">Choose your mood:</label>
+          <select id="mood">
+            <option>Happy</option>
+            <option>Sad</option>
+            <option>Angry</option>
+            <option>Worried</option>
+          </select>
+        </fieldset>
+        <div>
+          <input type="submit" value="Submit form">
+        </div>
+      </form>
+
+      <hr>
+
+      <table>
+        <caption>Demo table</caption>
+        <thead>
+          <tr>
+            <th scope="col">Heading 1</th><!--[18]-->
+            <th scope="col">Heading 2</th><!--[18]-->
+            <th scope="col">Heading 3</th><!--[18]-->
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Value 1</td>
+            <td>Value 2</td>
+            <td>Value 3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
     </article>
 
     <aside aria-labelledby="title3">
@@ -97,7 +172,9 @@
   </footer>
 
   <script>
-    // Useful JS: allow to activate a fake button (div element) with keyboard. The div will also will need tabindex="0".
+    // Useful JS: allow to activate a fake button (div element) with keyboard.
+    // The div will also need tabindex="0" and role="button".
+    // But yet always use <button> tag, when it's possible.
     document.onkeydown = function(e) {
       // Enter key
       if (e.keyCode === 13) {
